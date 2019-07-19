@@ -27,7 +27,7 @@ public static void main(String[] args) {
     
     Set<String> all = driver.getWindowHandles();
     
-    System.out.println(par+"\n"+all);
+    //System.out.println(par+"\n"+all);
     
     for(String x:all) {
     	if(!x.equals(par)) {

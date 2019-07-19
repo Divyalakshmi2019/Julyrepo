@@ -15,14 +15,6 @@ public static void main(String[] args) {
 	WebDriver d=new ChromeDriver();
 	d.get("https://www.shopclues.com/wholesale.html");
 	
-//	WebElement a = d.findElement(By.id("email"));
-//	a.sendKeys("pbdivyalakshmi@gmail.com");
-//	
-//	String x = a.getAttribute("value");
-//	System.out.println(x);
-//	
-//	String x1 = a.getAttribute("type");
-//	System.out.println(x1);
 	
 	WebElement q = d.findElement(By.xpath("//input[@id='autocomplete']"));
 	q.sendKeys("fast track women watch");
@@ -33,24 +25,19 @@ public static void main(String[] args) {
 	WebElement fastrack = d.findElement(By.xpath("//h2[text()='Fastrack Quartz Black Oval Women Watch 6015SM02']"));
 	fastrack.click();
 	
-	//String parWindow = d.getWindowHandle();
+	String parWindow = d.getWindowHandle();
 	
 	Set<String> all = d.getWindowHandles();
 	
-	System.out.println("\n"+all);
+	//System.out.println("\n"+all);
 	
 	for(String x:all) {
-		if(!x.equals(all)) {
+		if(!x.equals(parWindow)) {
 			d.switchTo().window(x);
 		}
 	}
 	
 	WebElement z = d.findElement(By.xpath("//button[text()='Add To Cart']"));
-	z.click();
-	
-	
-	
-
-	
+	z.click();	
 }
 }
